@@ -808,7 +808,7 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
           animatedHandleGestureState.value !== State.ACTIVE
         ) {
           isInTemporaryPosition.value = false;
-          const nextPosition = detents[currentIndex];
+          const nextPosition = detents[detents.length - 1]; // temporary - grab last index for now: BUG #2562 workaround
           return nextPosition;
         }
 
